@@ -24,6 +24,8 @@ import com.lagradost.cloudstream3.AcraApplication.Companion.setKey
 import com.lagradost.cloudstream3.CommonActivity.showToast
 import com.lagradost.cloudstream3.MainAPI.Companion.settingsForProvider
 import com.lagradost.cloudstream3.MainActivity.Companion.afterPluginsLoadedEvent
+import com.lagradost.cloudstream3.actions.VideoClickAction
+import com.lagradost.cloudstream3.actions.VideoClickActionHolder
 import com.lagradost.cloudstream3.mvvm.debugPrint
 import com.lagradost.cloudstream3.mvvm.logError
 import com.lagradost.cloudstream3.mvvm.normalSafeApiCall
@@ -294,6 +296,9 @@ object PluginManager {
         main {
             val uitext = txt(R.string.plugins_updated, updatedPlugins.size)
             createNotification(activity, uitext, updatedPlugins)
+            /*val navBadge = (activity as MainActivity).binding?.navRailView?.getOrCreateBadge(R.id.navigation_settings)
+            navBadge?.isVisible = true
+            navBadge?.number = 5*/
         }
 
         // ioSafe {
@@ -580,7 +585,12 @@ object PluginManager {
         synchronized(APIHolder.allProviders) {
             APIHolder.allProviders.removeIf { provider: MainAPI -> provider.sourcePlugin == plugin.filename }
         }
+
         extractorApis.removeIf { provider: ExtractorApi -> provider.sourcePlugin == plugin.filename }
+
+        synchronized(VideoClickActionHolder.allVideoClickActions) {
+            VideoClickActionHolder.allVideoClickActions.removeIf { action: VideoClickAction -> action.sourcePlugin == plugin.filename }
+        }
 
         classLoaders.values.removeIf { v -> v == plugin }
 

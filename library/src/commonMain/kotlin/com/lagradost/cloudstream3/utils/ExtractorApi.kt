@@ -237,6 +237,54 @@ import com.lagradost.cloudstream3.extractors.FlaswishCom
 import com.lagradost.cloudstream3.extractors.SfastwishCom
 import com.lagradost.cloudstream3.extractors.Vtbe
 import com.lagradost.cloudstream3.extractors.WishembedPro
+import com.lagradost.cloudstream3.extractors.Mwish
+import com.lagradost.cloudstream3.extractors.Dwish
+import com.lagradost.cloudstream3.extractors.Ewish
+import com.lagradost.cloudstream3.extractors.Kswplayer
+import com.lagradost.cloudstream3.extractors.Wishfast
+import com.lagradost.cloudstream3.extractors.Streamwish2
+import com.lagradost.cloudstream3.extractors.Strwish
+import com.lagradost.cloudstream3.extractors.Strwish2
+import com.lagradost.cloudstream3.extractors.Awish
+import com.lagradost.cloudstream3.extractors.Obeywish
+import com.lagradost.cloudstream3.extractors.Jodwish
+import com.lagradost.cloudstream3.extractors.Swhoi
+import com.lagradost.cloudstream3.extractors.Multimovies
+import com.lagradost.cloudstream3.extractors.UqloadsXyz
+import com.lagradost.cloudstream3.extractors.Doodporn
+import com.lagradost.cloudstream3.extractors.Asnwish
+import com.lagradost.cloudstream3.extractors.Nekowish
+import com.lagradost.cloudstream3.extractors.Nekostream
+import com.lagradost.cloudstream3.extractors.StreamSilk
+import com.lagradost.cloudstream3.extractors.Swdyu
+import com.lagradost.cloudstream3.extractors.VidHidePro
+import com.lagradost.cloudstream3.extractors.VidHidePro1
+import com.lagradost.cloudstream3.extractors.VidHidePro2
+import com.lagradost.cloudstream3.extractors.VidHidePro3
+import com.lagradost.cloudstream3.extractors.Voe1
+import com.lagradost.cloudstream3.extractors.Wishonly
+import com.lagradost.cloudstream3.extractors.Beastx 
+import com.lagradost.cloudstream3.extractors.Playerx
+import com.lagradost.cloudstream3.extractors.AnimesagaStream
+import com.lagradost.cloudstream3.extractors.Anplay
+import com.lagradost.cloudstream3.extractors.Kinogeru
+import com.lagradost.cloudstream3.extractors.Vidxstream
+import com.lagradost.cloudstream3.extractors.Boltx
+import com.lagradost.cloudstream3.extractors.Vectorx
+import com.lagradost.cloudstream3.extractors.Boosterx
+import com.lagradost.cloudstream3.extractors.Vidguardto1
+import com.lagradost.cloudstream3.extractors.Vidguardto2
+import com.lagradost.cloudstream3.extractors.VidHidePro4
+import com.lagradost.cloudstream3.extractors.VidHidePro5
+import com.lagradost.cloudstream3.extractors.VidHidePro6
+import com.lagradost.cloudstream3.extractors.Lulustream1
+import com.lagradost.cloudstream3.extractors.Lulustream2
+import com.lagradost.cloudstream3.extractors.Lulustream3
+import com.lagradost.cloudstream3.extractors.Vidguardto3
+import com.lagradost.cloudstream3.extractors.Ds2play
+import com.lagradost.cloudstream3.extractors.Ds2video
+import com.lagradost.cloudstream3.extractors.GamoVideo
+import com.lagradost.cloudstream3.extractors.Playerwish
 import com.lagradost.cloudstream3.mvvm.logError
 import com.lagradost.cloudstream3.mvvm.normalSafeApiCall
 import kotlinx.coroutines.delay
@@ -683,6 +731,7 @@ val extractorApis: MutableList<ExtractorApi> = arrayListOf(
     StreamSB(),
     Sblona(),
     Vidgomunimesb(),
+    StreamSilk(),
     StreamSB1(),
     StreamSB2(),
     StreamSB3(),
@@ -857,12 +906,14 @@ val extractorApis: MutableList<ExtractorApi> = arrayListOf(
     Vidmoly(),
     Vidmolyme(),
     Voe(),
+    Voe1(),
     Tubeless(),
     Moviehab(),
     MoviehabNet(),
     Jeniusplay(),
     StreamoUpload(),
 
+    GamoVideo(),
     Gdriveplayerapi(),
     Gdriveplayerapp(),
     Gdriveplayerfun(),
@@ -901,20 +952,65 @@ val extractorApis: MutableList<ExtractorApi> = arrayListOf(
     Dokicloud(),
     Megacloud(),
     VidhideExtractor(),
+    VidHidePro(),
+    VidHidePro1(),
+    VidHidePro2(),
+    VidHidePro3(),
+    VidHidePro4(),
+    VidHidePro5(),
+    VidHidePro6(),
+    Lulustream1(),
+    Lulustream2(),
+    Lulustream3(),
     StreamWishExtractor(),
     WishembedPro(),
     CdnwishCom(),
     FlaswishCom(),
     SfastwishCom(),
+    Playerwish(),
     EmturbovidExtractor(),
     Vtbe(),
     EPlayExtractor(),
     Vidguardto(),
+    Vidguardto1(),
+    Vidguardto2(),
+    Vidguardto3(),
     Simpulumlamerop(),
     Urochsunloath(),
     Yipsu(),
     MetaGnathTuggers(),
     Geodailymotion(),
+    Mwish(),
+    Dwish(),
+    Ewish(),
+    Kswplayer(),
+    Wishfast(),
+    Streamwish2(),
+    Strwish(),
+    Strwish2(),
+    Awish(),
+    Obeywish(),
+    Jodwish(),
+    Swhoi(),
+    Multimovies(),
+    UqloadsXyz(),
+    Doodporn(),
+    Asnwish(),
+    Nekowish(),
+    Nekostream(),
+    Swdyu(),
+    Wishonly(),
+    Beastx(),
+    Playerx(),
+    AnimesagaStream(),
+    Anplay(),
+    Kinogeru(),
+    Vidxstream(),
+    Boltx(),
+    Vectorx(),
+    Boosterx(),
+    Ds2play(),
+    Ds2video(),
     
 )
 

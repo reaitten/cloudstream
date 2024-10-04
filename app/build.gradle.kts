@@ -1,9 +1,7 @@
 import com.android.build.gradle.internal.cxx.configure.gradleLocalProperties
-import org.jetbrains.dokka.gradle.DokkaTask
 import org.jetbrains.kotlin.gradle.plugin.mpp.pm20.util.archivesName
 import org.jetbrains.kotlin.gradle.tasks.KotlinCompile
 import java.io.ByteArrayOutputStream
-import java.net.URL
 
 plugins {
     id("com.android.application")
@@ -152,10 +150,6 @@ android {
     namespace = "com.lagradost.cloudstream3"
 }
 
-repositories {
-    maven("https://jitpack.io")
-}
-
 dependencies {
     // Testing
     testImplementation("junit:junit:4.13.2")
@@ -191,20 +185,20 @@ dependencies {
     implementation("dev.zacsweers.autoservice:auto-service-ksp:1.2.0")
 
     // Media 3 (ExoPlayer)
-    implementation("androidx.media3:media3-ui:1.1.1")
-    implementation("androidx.media3:media3-cast:1.1.1")
-    implementation("androidx.media3:media3-common:1.1.1")
-    implementation("androidx.media3:media3-session:1.1.1")
-    implementation("androidx.media3:media3-exoplayer:1.1.1")
+    implementation("androidx.media3:media3-ui:1.4.1")
+    implementation("androidx.media3:media3-cast:1.4.1")
+    implementation("androidx.media3:media3-common:1.4.1")
+    implementation("androidx.media3:media3-session:1.4.1")
+    implementation("androidx.media3:media3-exoplayer:1.4.1")
     implementation("com.google.android.mediahome:video:1.0.0")
-    implementation("androidx.media3:media3-exoplayer-hls:1.1.1")
-    implementation("androidx.media3:media3-exoplayer-dash:1.1.1")
-    implementation("androidx.media3:media3-datasource-okhttp:1.1.1")
+    implementation("androidx.media3:media3-exoplayer-hls:1.4.1")
+    implementation("androidx.media3:media3-exoplayer-dash:1.4.1")
+    implementation("androidx.media3:media3-datasource-okhttp:1.4.1")
 
     // PlayBack
     implementation("com.jaredrummler:colorpicker:1.1.0") // Subtitle Color Picker
     implementation("com.github.recloudstream:media-ffmpeg:1.1.0") // Custom FF-MPEG Lib for Audio Codecs
-    implementation("com.github.teamnewpipe:NewPipeExtractor:176da72") /* For Trailers
+    implementation("com.github.teamnewpipe:NewPipeExtractor:v0.24.2") /* For Trailers
     ^ Update to Latest Commits if Trailers Misbehave, github.com/TeamNewPipe/NewPipeExtractor/commits/dev */
     implementation("com.github.albfernandez:juniversalchardet:2.5.0") // Subtitle Decoding
 
@@ -282,23 +276,5 @@ tasks.withType<KotlinCompile> {
     kotlinOptions {
         jvmTarget = "1.8"
         freeCompilerArgs = listOf("-Xjvm-default=all-compatibility")
-    }
-}
-
-tasks.withType<DokkaTask>().configureEach {
-    moduleName.set("Cloudstream")
-    dokkaSourceSets {
-        named("main") {
-            sourceLink {
-                // Unix based directory relative path to the root of the project (where you execute gradle respectively).
-                localDirectory.set(file("src/main/java"))
-
-                // URL showing where the source code can be accessed through the web browser
-                remoteUrl.set(URL("https://github.com/recloudstream/cloudstream/tree/master/app/src/main/java"))
-
-                // Suffix which is used to append the line number to the URL. Use #L for GitHub
-                remoteLineSuffix.set("#L")
-            }
-        }
     }
 }
